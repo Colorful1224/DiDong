@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+
     compileSdkVersion 31
     buildToolsVersion buildToolsVersion
 
@@ -15,7 +16,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "DiDong.apk"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false

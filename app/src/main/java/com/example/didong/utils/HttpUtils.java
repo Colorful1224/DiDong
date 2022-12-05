@@ -71,8 +71,10 @@ public class HttpUtils {
                 if (data==null) {
                     bytes = "".getBytes("UTF-8");
                 } else {
+                    Log.i("data",data.toString());
                     bytes = data.toString().getBytes("UTF-8");
                 }
+                Log.i("url",url.getPath());
                 connection.setRequestProperty("Content-length", String.valueOf(bytes.length));
                 //建立连接
                 connection.connect();
